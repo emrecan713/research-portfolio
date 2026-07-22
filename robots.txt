@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emrecan713.github.io/research-portfolio/sitemap.xml

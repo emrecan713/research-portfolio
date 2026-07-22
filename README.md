@@ -1,6 +1,6 @@
 # Emrecan Gulay Research Portfolio
 
-Static research portfolio prepared for the Verda UX Researcher application.
+Static research portfolio for applied research, UX research, responsible AI, human AI interaction, and academic roles.
 
 Live site: https://emrecan713.github.io/research-portfolio/
 

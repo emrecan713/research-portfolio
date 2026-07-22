@@ -41,6 +41,7 @@ body {
 img,
 video {
   display: block;
+  height: auto;
   max-width: 100%;
 }
 
@@ -307,9 +308,8 @@ h1 {
 
 .visual-frame > img {
   width: 100%;
-  aspect-ratio: 16 / 12.5;
-  object-fit: cover;
-  object-position: top;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .trace-rail {
@@ -527,8 +527,11 @@ figcaption {
 .figure-wide figcaption,
 .media-grid figcaption,
 .patent-figure figcaption {
+  display: flex;
   padding: 12px 14px;
   border-top: 1px solid var(--line);
+  align-items: center;
+  gap: 16px;
 }
 
 .decision-chain {
@@ -586,6 +589,27 @@ figcaption {
   background: white;
 }
 
+.zoomable {
+  display: block;
+  overflow: hidden;
+  background: white;
+}
+
+.zoomable img {
+  transition: transform .2s ease;
+}
+
+.zoomable:hover img {
+  transform: scale(1.01);
+}
+
+figcaption .zoom-label {
+  margin-left: auto;
+  color: var(--blue);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .study-grid figure:first-child img,
 .study-grid figure:nth-child(2) img {
   aspect-ratio: 16 / 9.3;
@@ -599,6 +623,11 @@ figcaption {
 .span-two img {
   aspect-ratio: 4.8 / 1;
   object-fit: cover;
+}
+
+.prototype-overview img {
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .evidence-note {
@@ -1010,12 +1039,6 @@ figcaption {
 }
 
 .js [data-reveal] {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .5s ease, transform .5s ease;
-}
-
-.js [data-reveal].is-visible {
   opacity: 1;
   transform: none;
 }

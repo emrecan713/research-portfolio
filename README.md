@@ -1,6 +1,6 @@
 # Emrecan Gulay Research Portfolio
 
-Static research portfolio for applied research, UX research, responsible AI, human AI interaction, and academic roles.
+Static research portfolio for applied research, UX research, responsible AI, human AI interaction, and academic roles. The site presents one trajectory across feedback oriented design inquiry, HMI technology planning, Relational Dissonance, and the accepted NordiCHI 2026 Relational Transparency demo.
 
 Live site: https://emrecan713.github.io/research-portfolio/
 

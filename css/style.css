@@ -9,6 +9,7 @@
   --navy: #0d2530;
   --blue: #2457ff;
   --coral: #ff6b4a;
+  --gold: #c98a19;
   --mint: #8ce0d2;
   --soft-blue: #dfe7ff;
   --max: 1360px;
@@ -409,6 +410,71 @@ figcaption {
   line-height: 1.45;
 }
 
+.trajectory-section {
+  padding: clamp(62px, 7vw, 104px) 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-raised);
+}
+
+.trajectory-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(42px, 7vw, 104px);
+  align-items: start;
+}
+
+.trajectory-layout header h2 {
+  max-width: 13ch;
+  margin: 24px 0 20px;
+  font-size: clamp(2.5rem, 4.5vw, 4.6rem);
+}
+
+.trajectory-layout header > p:last-child {
+  max-width: 56ch;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.trajectory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--line);
+  list-style: none;
+}
+
+.trajectory-grid li {
+  min-height: 178px;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.trajectory-grid span,
+.practice-sequence span {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--coral);
+  font: 700 10px/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.trajectory-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  font: 650 1.12rem/1.15 var(--display);
+}
+
+.trajectory-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .case-rail {
   position: sticky;
   z-index: 60;
@@ -532,6 +598,37 @@ figcaption {
   border-top: 1px solid var(--line);
   align-items: center;
   gap: 16px;
+}
+
+.figure-takeaway {
+  margin: 0;
+  padding: 14px;
+  border-top: 1px solid var(--line);
+  background: var(--soft-blue);
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+.figure-takeaway strong {
+  color: var(--blue);
+}
+
+.study-grid figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.study-grid .zoomable {
+  order: 1;
+}
+
+.study-grid figcaption {
+  order: 2;
+}
+
+.study-grid .figure-takeaway {
+  order: 3;
 }
 
 .decision-chain {
@@ -853,6 +950,51 @@ figcaption .zoom-label {
   color: var(--ink);
 }
 
+.practice-sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 26px 0 32px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.practice-sequence article {
+  min-height: 190px;
+  padding: 20px 20px 24px 0;
+  border-right: 1px solid var(--line);
+}
+
+.practice-sequence article + article {
+  padding-left: 20px;
+}
+
+.practice-sequence article:last-child {
+  border-right: 0;
+}
+
+.practice-sequence h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.practice-sequence p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.evidence-footnote {
+  margin-top: 24px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.evidence-footnote p {
+  margin: 0;
+}
+
 .soft-section {
   background: #e7eeec;
 }
@@ -885,6 +1027,20 @@ figcaption .zoom-label {
   font: 400 10px/1.5 var(--mono);
   letter-spacing: .06em;
   text-transform: uppercase;
+}
+
+.trajectory-note {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+  padding: 22px 24px;
+  border-left: 4px solid var(--gold);
+  background: rgb(255 255 255 / 54%);
+}
+
+.trajectory-note p {
+  margin: 0;
 }
 
 .fit-section {
@@ -1032,6 +1188,10 @@ figcaption .zoom-label {
   gap: 18px;
 }
 
+.site-footer .shell > span:last-child > span {
+  color: var(--muted);
+}
+
 .site-footer a {
   text-decoration: underline;
   text-decoration-color: var(--blue);
@@ -1059,6 +1219,14 @@ figcaption .zoom-label {
 
   .proof-strip div:nth-child(n + 4) {
     border-top: 1px solid var(--line);
+  }
+
+  .trajectory-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .trajectory-layout header h2 {
+    max-width: 16ch;
   }
 
   .fit-grid {
@@ -1092,6 +1260,22 @@ figcaption .zoom-label {
 
   .case-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .practice-sequence {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-sequence article,
+  .practice-sequence article + article {
+    min-height: auto;
+    padding: 20px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .practice-sequence article:last-child {
+    border-bottom: 0;
   }
 
   .demo-layout {
@@ -1204,6 +1388,7 @@ figcaption .zoom-label {
   .proof-strip div {
     min-height: 116px;
     padding: 20px 16px 20px 0;
+    border-right: 1px solid var(--line);
   }
 
   .proof-strip div + div {
@@ -1240,6 +1425,22 @@ figcaption .zoom-label {
     font-size: clamp(2.65rem, 12vw, 4.6rem);
   }
 
+  .case-section {
+    padding: 72px 0;
+  }
+
+  .fit-section {
+    padding: 78px 0;
+  }
+
+  .trajectory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trajectory-grid li {
+    min-height: auto;
+  }
+
   .decision-chain {
     grid-template-columns: 1fr;
   }
@@ -1262,6 +1463,11 @@ figcaption .zoom-label {
   }
 
   .evidence-note {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .trajectory-note {
     grid-template-columns: 1fr;
     gap: 8px;
   }
